@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context/ 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="veg" class="com.autowiring.Vegetable" autowire-candidate="false">
+		<property name="name" value="Carrot"></property>
+		<property name="colour" value="Saffron"></property>
+	</bean>
+	<bean id="veg1" class="com.autowiring.Vegetable">
+		<property name="name" value="Carrot"></property>
+		<property name="colour" value="Saffron"></property>
+	</bean>
+	<bean id="fruitNamewithListAndMap"
+		class="com.autowiring.Fruit">
+		<property name="fruitName">
+			<list>
+				<value>Orange</value>
+				<value>Apple</value>
+				<value>JackFruit</value>
+				<value>Mango</value>
+			</list>
+		</property>
+		<property name="fruitNameMap">
+			<map>
+				<entry key="Mango" value="Yellow"></entry>
+				<entry key="Apple" value="Red"></entry>
+				<entry key="Orange" value="Orange"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="salad" class="com.autowiring.Salad">
+		<property name="fruit" ref="fruitNamewithListAndMap">
+		</property>
+		<property name="vegetable" ref="veg">
+		</property>
+	</bean>
+	<bean id="saladAutowired" class="com.autowiring.Salad" autowire="byType">
+		
+	</bean>
+</beans> 
