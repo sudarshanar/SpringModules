@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context/ 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="veg" class="com.start.Vegetable">
+		<property name="name" value="Carrot"></property>
+		<property name="colour" value="Saffron"></property>
+	</bean>
+	<bean id="fruitNamewithListAndMap" class="com.start.Fruit">
+		<property name="fruitName">
+			<list>
+				<value>Orange</value>
+				<value>Apple</value>
+				<value>JackFruit</value>
+				<value>Mango</value>
+			</list>
+		</property>
+
+		<property name="fruitNameMap">
+			<map>
+				<entry key="Mango" value="Yellow"></entry>
+				<entry key="Apple" value="Red"></entry>
+				<entry key="Orange" value="Orange"></entry>
+			</map>
+		</property>
+
+	</bean>
+
+</beans> 
