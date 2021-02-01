@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	<context:annotation-config></context:annotation-config>
+	<bean id="veg" class="com.spring.qualifier.Vegetable">
+		<property name="name" value="Carrot"></property>
+		<property name="colour" value="Saffron"></property>
+		<qualifier value="firstVeg"></qualifier>
+	</bean>
+	<bean id="fruitNamewithListAndMap"
+		class="com.spring.qualifier.Fruit">
+		<qualifier value="firstFruit"></qualifier>
+		<property name="fruitName">
+			<list>
+				<value>Orange</value>
+				<value>Apple</value>
+				<value>JackFruit</value>
+				<value>Mango</value>
+			</list>
+		</property>
+
+		<property name="fruitNameMap">
+			<map>
+				<entry key="Mango" value="Yellow"></entry>
+				<entry key="Apple" value="Red"></entry>
+				<entry key="Orange" value="Orange"></entry>
+			</map>
+		</property>
+
+	</bean>
+	<bean id="veg1" class="com.spring.qualifier.Vegetable"></bean>
+	<bean id="fruitNamewithListAndMap1"
+		class="com.spring.qualifier.Fruit"></bean>
+
+	<bean id="salad" class="com.spring.qualifier.Salad"></bean>
+</beans> 
