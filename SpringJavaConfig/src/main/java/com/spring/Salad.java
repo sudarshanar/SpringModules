@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Salad {
 	@Autowired
 	private Fruit fruit;
+//	@Resource
+//	@Inject
 	@Autowired
+//	@Named("veg")
 	private Vegetable vegetable;
 
 	public Salad() {

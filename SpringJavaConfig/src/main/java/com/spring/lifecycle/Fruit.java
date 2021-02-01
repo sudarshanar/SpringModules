@@ -1,5 +1,8 @@
 package com.spring.lifecycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Required;
 
 public class Fruit {
@@ -37,13 +40,13 @@ public class Fruit {
 	}
 
 	// notworking
-//	@PostConstruct
+	@PostConstruct
 	public void init() {
 		System.out.println("Initializing contex");
 	}
 
 	// notworking
-//	@PreDestroy
+	@PreDestroy
 	public void destroy() {
 		System.out.println("Destroying context");
 	}

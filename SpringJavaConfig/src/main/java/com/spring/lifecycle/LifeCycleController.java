@@ -8,9 +8,9 @@ public class LifeCycleController {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new FileSystemXmlApplicationContext("appContext.xml");
-		 Fruit fruit = context.getBean("fruitFromlifecycle", Fruit.class);
-		 fruit.disp();
-
+		Fruit fruit = context.getBean("fruitFromlifecycle", Fruit.class);
+		fruit.disp();
+		((FileSystemXmlApplicationContext) context).close();
 	}
 
 }
