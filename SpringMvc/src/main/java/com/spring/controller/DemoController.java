@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.model.Account;
 
 @Controller
+@SessionAttributes("createAccountObj")
 public class DemoController {
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String getQuote(Model model) {
@@ -29,9 +31,16 @@ public class DemoController {
 			return "createAccount";
 		}
 		System.out.println(account.toString());
-		return "createAccount";
+		return "created";
 	}
 
+	/*
+	 * @ModelAttribute() public void setUser(@RequestParam("uname") String userName,
+	 * Model model) { model.addAttribute("user", userName); String role =
+	 * "Undefined"; if(userName.equals("Sam"))role="Managing Director";
+	 * if(userName.equals("Raj"))role="Cheefe Executive Officer";
+	 * model.addAttribute("role", role); }
+	 */
 	@RequestMapping(value = "/handleFile", method = RequestMethod.GET)
 	public String handleFile(@RequestParam("file") MultipartFile file) {
 		 System.out.println(file);
