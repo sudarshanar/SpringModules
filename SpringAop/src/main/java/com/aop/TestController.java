@@ -25,9 +25,9 @@ public class TestController {
 //		bike.drive(202);
 //		bike.drift();
 //		bike.stop();
-		bus.drive();
-		bus.drive("Sam");
-		bus.drive(100);
+		bus.drive1();
+		bus.drive1("Sam");
+		bus.drive1(100);
 		((AnnotationConfigApplicationContext) context).close();
 	}
 

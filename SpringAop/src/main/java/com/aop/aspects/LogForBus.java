@@ -4,7 +4,6 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
@@ -12,17 +11,20 @@ import org.springframework.stereotype.Component;
 @Aspect
 @EnableAspectJAutoProxy
 public class LogForBus {
-	@Before("execution(public void dr*())")
+//	@Before("execution(public void dr*())")
+	@Before("args()")
 	public void vehicleAboutToMove(JoinPoint jp) {
 		System.out.println("Starting Drivev with no param");
 		
 	}
 	
-	@Before("execution(public String dr*(String))")
-	public void vehicleAboutToMoveWith2Params(JoinPoint jp) {
-		System.out.println("Parameters with 2 params");
-		
-	}
+	/*
+	 * @Before("execution(public String dr*(String))") public void
+	 * vehicleAboutToMoveWith2Params(JoinPoint jp) {
+	 * System.out.println("Parameters with 2 params");
+	 * 
+	 * }
+	 */
 
 	/*
 	 * @Pointcut("execution(* dr*(..))") public void methodsStartsWith_dr() {
